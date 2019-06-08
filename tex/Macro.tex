@@ -1,0 +1,93 @@
+%
+%
+%-----------------------------数学関係のマクロ----------------------------------
+%
+%
+%微小量
+\renewcommand{\d}{{\ensuremath{\rm d}}}
+
+
+%偏微分
+\newcommand{\pard}[3]{{%
+	\ifnum #2<1%
+		\text{エラー}%
+	\else{%
+		\ifnum #2=1%
+			\ensuremath{%
+				\frac{\partial #3}{\partial #1}%
+				%\partial_{#1} #3%
+			}%
+		\else{%
+			\ensuremath{%
+				\frac{\partial^{#2} #3}{\partial #1^{#2}}%
+				%\partial_{#1}^{#2} #3
+			}%
+		}\fi%
+	}\fi%
+}}
+
+%回転
+\newcommand{\rot}{{\ensuremath{\nabla\times}}}
+
+
+%発散
+\renewcommand{\div}{{\ensuremath{\nabla\cdot}}}
+
+
+%勾配
+\newcommand{\grad}{{\ensuremath{\nabla}}}
+
+
+%ラプラシアン
+\newcommand{\laplacian}{{\ensuremath{\nabla^2}}}
+
+
+%基底ベクトル
+\newcommand{\e}[1]{{\ensuremath{\bm{e}_{#1}}}}
+
+
+%法線ベクトル
+\newcommand{\n}{{\ensuremath{\bm{n}}}}
+
+
+%接線ベクトル
+\renewcommand{\t}{{\ensuremath{\bm{t}}}}
+
+
+%面ベクトル、Poyntingベクトル
+\renewcommand{\S}{{\ensuremath{\bm{S}}}}
+
+
+%位置ベクトル
+\renewcommand{\r}{{\ensuremath{\bm{r}}}}
+
+
+%位置ベクトル2
+\newcommand{\x}{{\ensuremath{\bm{x}}}}
+
+
+%平均
+\newcommand{\average}[1]{{\ensuremath{\langle#1\rangle}}}
+
+
+
+%
+%
+%------------------------------数字の体裁関係のマクロ--------------------------------
+%
+%
+%
+%ローマ数字の出力に使う
+\newcommand{\ONE}{{\rm I}}
+\newcommand{\TWO}{{\rm I\hspace{-.1em}I}}
+\newcommand{\THREE}{{\rm I\hspace{-.1em}I\hspace{-.1em}I}}
+\newcommand{\FOUR}{{\rm I\hspace{-.1em}V}}
+\newcommand{\FIVE}{{\rm V}}
+
+
+
+%〇数字などに使う
+\newcommand{\circled}[1]{{\textcircled{\scriptsize #1}}}
+
+
+
