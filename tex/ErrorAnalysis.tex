@@ -1,8 +1,136 @@
 \documentclass[10pt,dvipdfmx]{jsarticle}
+
+%パッケージ
 \input{Package.tex}
+
+%マクロ
+\input{Macro.tex}
 
 \begin{document}
 \section{誤差の伝播}
+\subsection{一般式}
+$x_1,x_2,\cdots,x_n$が独立の変数であり、
+$y$はそれらの関数であるとき、
+\begin{align}
+	y
+&=
+	f(x_1,x_2,\cdots,x_n)
+\end{align}
+である。
+
+そして、それらの誤差を$\delta x_1,\delta x_2,\cdots,\delta x_n,\delta y$
+とすると、
+\begin{align}
+	\delta y^2
+&=
+	\left(
+		\pard{x_1}{1}{f}
+			\delta x_1
+	\right)^2
+	+
+	\left(
+		\pard{x_2}{1}{f}
+			\delta x_2
+	\right)^2
+	+
+	\cdots
+	+
+	\left(
+		\pard{x_n}{1}{f}
+			\delta x_n
+	\right)^2
+\end{align}
+となる。少し具体的な関数形で考えてみる。
+
+\subsection{関数の積の誤差}
+次のような従属変数の誤差を考える。
+\begin{align}
+	y
+&=
+	f(x) g(x)
+\end{align}
+
+このとき$\delta y$は
+\begin{align}
+	\delta y^2
+&=
+	\left(
+		\left(
+			f' g +f g'
+		\right)\delta x
+	\right)^2
+\end{align}
+
+\subsection{関数の積の誤差2}
+次は
+\begin{align}
+	y
+&=
+	f(x_1) g(x_2)
+\end{align}
+を考える。
+
+\begin{align}
+	\delta y^2
+&=
+	\left(
+		f' g \delta x_1
+	\right)^2
+	+
+	\left(
+		f g' \delta x_2
+	\right)^2
+\end{align}
+
+\subsubsection{関数の積の誤差3}
+次は
+\begin{align}
+	y
+&=
+	f(x_1) g(x_1,x_2)
+\end{align}
+を考える。
+
+\begin{align}
+	\delta y^2
+&=
+	\left(
+		\left(
+			f' g
+			+
+			f \pard{x_1}{1}{g}
+		\right) \delta x_1
+	\right)^2
+	+
+	\left(
+		f \pard{x_2}{1}{g}
+			\delta x_2
+	\right)^2 \\
+%
+%
+&=
+	f'^2 \delta x_1^2 \cdot g^2
+	+
+	2 f' g f \pard{x_1}{1}{g} \delta x_1^2
+	+
+	f^2
+		\left(
+			\left(
+				\pard{x_1}{1}{g} \delta x_1
+			\right)^2
+			+
+			\left(
+				\pard{x_2}{1}{g} \delta x_2
+			\right)^2
+		\right) \\
+%
+%
+&=
+	\delta f^2 \cdot g^2
+	+
+	f^2 \delta g^2
+	+
+\end{align}
 
 
 \section{誤差の表記}
