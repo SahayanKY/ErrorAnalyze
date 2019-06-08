@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sun Jun 09 01:36:35 JST 2019
+outputDir=tex/
+markDer=true
+mainTexFile=ErrorAnalysis.tex
+bibrefDir=
+builderNum=4
+outputFile=ErrorAnalysis.pdf
+makeIndSty=
+srcDir=tex/
+markTmpDer=true
+tempDir=tex/temp
+outputFormat=pdf
+langSpell=
